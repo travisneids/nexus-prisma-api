@@ -28,7 +28,7 @@ export async function updateUserHandler(
     }>, reply: FastifyReply
 ) {    
     try {
-        const user = await updateUser(req.body, 8)
+        const user = await updateUser(req.body, req.user.id)
 
         return reply.code(201).send(user)
     } catch (e) {
