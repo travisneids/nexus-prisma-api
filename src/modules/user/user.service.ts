@@ -24,14 +24,12 @@ export async function createUser(input: CreateUserInput) {
 
 export async function updateUser(
     data: UpdateUserInput, userId: number
-    ) {
-    return await prisma.user.update({
+) {
+    return await prisma.profile.update({
         where: {
-            id: userId
+            userId
         },
-        data: {
-            ...data
-        },
+        data
     })
 }
 
